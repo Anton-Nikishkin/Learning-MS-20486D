@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CakeStoreApi", "Module01\Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalsMvc", "Module01\AnimalsMvc\AnimalsMvc.csproj", "{BF6C9290-800D-414E-B19A-0883C5598C57}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module02", "Module02", "{787AFEA8-82AD-41ED-A687-6D2DF9DA0DB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignProject", "Module02\DesignProject\DesignProject.csproj", "{E3E203B8-59C1-4F9B-9166-45C129A1B253}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,10 @@ Global
 		{BF6C9290-800D-414E-B19A-0883C5598C57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF6C9290-800D-414E-B19A-0883C5598C57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF6C9290-800D-414E-B19A-0883C5598C57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3E203B8-59C1-4F9B-9166-45C129A1B253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3E203B8-59C1-4F9B-9166-45C129A1B253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3E203B8-59C1-4F9B-9166-45C129A1B253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3E203B8-59C1-4F9B-9166-45C129A1B253}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +45,7 @@ Global
 		{2AC42AD3-9E94-4CBF-B197-B08DA3AE7BCF} = {8A9D55CC-7ED7-4578-B47B-4490FC2A1975}
 		{412F3657-DB68-4247-82F5-12C0D1021949} = {8A9D55CC-7ED7-4578-B47B-4490FC2A1975}
 		{BF6C9290-800D-414E-B19A-0883C5598C57} = {8A9D55CC-7ED7-4578-B47B-4490FC2A1975}
+		{E3E203B8-59C1-4F9B-9166-45C129A1B253} = {787AFEA8-82AD-41ED-A687-6D2DF9DA0DB5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA3910CE-E882-4EDA-9087-38DDFE576336}
