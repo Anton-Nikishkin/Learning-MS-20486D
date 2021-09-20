@@ -1,6 +1,6 @@
 using System;
 
-namespace CakeStoreApi
+namespace CakeStoreApi.Models
 {
     public class WeatherForecast
     {
