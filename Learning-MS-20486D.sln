@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActorsRazorPages", "Module0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CakeStoreApi", "Module01\CakeStoreApi\CakeStoreApi.csproj", "{412F3657-DB68-4247-82F5-12C0D1021949}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalsMvc", "Module01\AnimalsMvc\AnimalsMvc.csproj", "{BF6C9290-800D-414E-B19A-0883C5598C57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{412F3657-DB68-4247-82F5-12C0D1021949}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{412F3657-DB68-4247-82F5-12C0D1021949}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{412F3657-DB68-4247-82F5-12C0D1021949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF6C9290-800D-414E-B19A-0883C5598C57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF6C9290-800D-414E-B19A-0883C5598C57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF6C9290-800D-414E-B19A-0883C5598C57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF6C9290-800D-414E-B19A-0883C5598C57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2AC42AD3-9E94-4CBF-B197-B08DA3AE7BCF} = {8A9D55CC-7ED7-4578-B47B-4490FC2A1975}
 		{412F3657-DB68-4247-82F5-12C0D1021949} = {8A9D55CC-7ED7-4578-B47B-4490FC2A1975}
+		{BF6C9290-800D-414E-B19A-0883C5598C57} = {8A9D55CC-7ED7-4578-B47B-4490FC2A1975}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA3910CE-E882-4EDA-9087-38DDFE576336}
