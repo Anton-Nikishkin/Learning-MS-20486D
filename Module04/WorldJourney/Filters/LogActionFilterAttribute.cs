@@ -35,5 +35,14 @@ namespace WorldJourney.Filters
             using StreamWriter sw = new StreamWriter(fs);
             sw.WriteLine($"The action {actionName} in {controllerName} controller started, event fired: {nameof(OnActionExecuting)}");
         }
+
+        public override void OnActionExecuted(ActionExecutedContext context)
+        {
+            var actionName = context.ActionDescriptor.RouteValues["action"];
+            var controllerName = context.ActionDescriptor.RouteValues["controller"];
+            using FileStream fs = new FileStream(_fullPath, FileMode.Create);
+            using StreamWriter sw = new StreamWriter(fs);
+            sw.WriteLine($"The action {actionName} in {controllerName} controller finished, event fired: {nameof(OnActionExecuted)}");
+        }
     }
 }
