@@ -18,6 +18,17 @@ namespace PollBall
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)
         {
+            app.Use(async (context, next) =>
+            {
+                if (context.Request.Query.ContainsKey("favorite"))
+                {
+                    var selectedValue = context.Request.Query["favorite"].ToString();
+                    await context.Response.WriteAsync($"Selected value is: {selectedValue}");
+                } else
+                {
+                    await next.Invoke();
+                }
+            });
             app.UseStaticFiles();
 
             app.Run(async (context) =>
