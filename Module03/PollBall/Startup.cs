@@ -29,6 +29,7 @@ namespace PollBall
                     await next.Invoke();
                 }
             });
+
             app.UseStaticFiles();
 
             app.Run(async (context) =>
