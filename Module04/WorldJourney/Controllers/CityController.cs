@@ -20,6 +20,7 @@ namespace WorldJourney.Controllers
             _data.CityInitializeData();
         }
 
+        [Route("WorldJourney")]
         public IActionResult Index()
         {
             ViewData["Page"] = "Search city";
@@ -27,6 +28,7 @@ namespace WorldJourney.Controllers
             return View();
         }
 
+        [Route("CityDetails/{id?}")]
         public IActionResult Details(int? id)
         {
             ViewData["Page"] = "Search city";
