@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -43,6 +44,16 @@ namespace WorldJourney.Filters
             using FileStream fs = new FileStream(_fullPath, FileMode.Create);
             using StreamWriter sw = new StreamWriter(fs);
             sw.WriteLine($"The action {actionName} in {controllerName} controller finished, event fired: {nameof(OnActionExecuted)}");
+        }
+
+        public override void OnResultExecuted(ResultExecutedContext context)
+        {
+            var actionName = context.ActionDescriptor.RouteValues["action"];
+            var controllerName = context.ActionDescriptor.RouteValues["controller"];
+            var result = (ViewResult)context.Result;
+            using FileStream fs = new FileStream(_fullPath, FileMode.Create);
+            using StreamWriter sw = new StreamWriter(fs);
+            sw.WriteLine($"The action {actionName} in {controllerName} controller has the following viewData : {result.ViewData.Values.FirstOrDefault()}, event fired: {nameof(OnResultExecuted)}");
         }
     }
 }
