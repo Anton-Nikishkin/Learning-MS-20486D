@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using WorldJourney.Filters;
 using WorldJourney.Models;
 
 namespace WorldJourney
@@ -22,6 +23,7 @@ namespace WorldJourney
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IData, Data>();
+            services.AddScoped<LogActionFilterAttribute>();
             services.AddControllersWithViews();
         }
 

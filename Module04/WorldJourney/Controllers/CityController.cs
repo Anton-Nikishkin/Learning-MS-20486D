@@ -3,6 +3,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
+using WorldJourney.Filters;
 using WorldJourney.Models;
 
 namespace WorldJourney.Controllers
@@ -21,6 +22,7 @@ namespace WorldJourney.Controllers
         }
 
         [Route("WorldJourney")]
+        [ServiceFilter(typeof(LogActionFilterAttribute))]
         public IActionResult Index()
         {
             ViewData["Page"] = "Search city";
@@ -36,7 +38,7 @@ namespace WorldJourney.Controllers
             var city = _data.GetCityById(id);
 
             if (city == null) return NotFound();
-            
+
             ViewBag.Title = city.CityName;
 
             return View(city);
