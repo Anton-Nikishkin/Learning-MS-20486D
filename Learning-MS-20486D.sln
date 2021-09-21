@@ -5,15 +5,19 @@ VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module01", "Module01", "{8A9D55CC-7ED7-4578-B47B-4490FC2A1975}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActorsRazorPages", "Module01\ActorsRazorPages\ActorsRazorPages.csproj", "{2AC42AD3-9E94-4CBF-B197-B08DA3AE7BCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActorsRazorPages", "Module01\ActorsRazorPages\ActorsRazorPages.csproj", "{2AC42AD3-9E94-4CBF-B197-B08DA3AE7BCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CakeStoreApi", "Module01\CakeStoreApi\CakeStoreApi.csproj", "{412F3657-DB68-4247-82F5-12C0D1021949}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CakeStoreApi", "Module01\CakeStoreApi\CakeStoreApi.csproj", "{412F3657-DB68-4247-82F5-12C0D1021949}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalsMvc", "Module01\AnimalsMvc\AnimalsMvc.csproj", "{BF6C9290-800D-414E-B19A-0883C5598C57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimalsMvc", "Module01\AnimalsMvc\AnimalsMvc.csproj", "{BF6C9290-800D-414E-B19A-0883C5598C57}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module02", "Module02", "{787AFEA8-82AD-41ED-A687-6D2DF9DA0DB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignProject", "Module02\DesignProject\DesignProject.csproj", "{E3E203B8-59C1-4F9B-9166-45C129A1B253}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module03", "Module03", "{A7FB73FB-9DBF-431C-B506-B6E362F9C1B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PollBall", "Module03\PollBall\PollBall.csproj", "{68A3D473-6452-47CC-BD3A-3CDB5CE3908B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +41,10 @@ Global
 		{E3E203B8-59C1-4F9B-9166-45C129A1B253}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3E203B8-59C1-4F9B-9166-45C129A1B253}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3E203B8-59C1-4F9B-9166-45C129A1B253}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68A3D473-6452-47CC-BD3A-3CDB5CE3908B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68A3D473-6452-47CC-BD3A-3CDB5CE3908B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68A3D473-6452-47CC-BD3A-3CDB5CE3908B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68A3D473-6452-47CC-BD3A-3CDB5CE3908B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +54,7 @@ Global
 		{412F3657-DB68-4247-82F5-12C0D1021949} = {8A9D55CC-7ED7-4578-B47B-4490FC2A1975}
 		{BF6C9290-800D-414E-B19A-0883C5598C57} = {8A9D55CC-7ED7-4578-B47B-4490FC2A1975}
 		{E3E203B8-59C1-4F9B-9166-45C129A1B253} = {787AFEA8-82AD-41ED-A687-6D2DF9DA0DB5}
+		{68A3D473-6452-47CC-BD3A-3CDB5CE3908B} = {A7FB73FB-9DBF-431C-B506-B6E362F9C1B3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA3910CE-E882-4EDA-9087-38DDFE576336}
