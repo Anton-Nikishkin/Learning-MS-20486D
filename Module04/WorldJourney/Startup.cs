@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -49,8 +45,15 @@ namespace WorldJourney
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "TravelerRoute",
+                    pattern: "{controller}/{action}/{name}",
+                    constraints: new { name = "[A-Za-z ]+" },
+                    defaults: new { controller = "Traveler", action = "Index", name = "Anton Nikishkin" });
+
+                endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}",
+                    constraints: new { id = "[0-9]+" });
             });
         }
     }
