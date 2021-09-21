@@ -15,6 +15,8 @@ namespace PollBall
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IPollResultsService, PollResultsService>();
+
+            services.AddMvc();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IPollResultsService pollResults)
@@ -39,6 +41,8 @@ namespace PollBall
             });
 
             app.UseStaticFiles();
+
+            app.UseMvcWithDefaultRoute();
 
             app.Run(async (context) =>
             {
