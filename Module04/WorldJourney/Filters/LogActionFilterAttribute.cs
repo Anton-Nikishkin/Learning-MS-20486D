@@ -1,15 +1,16 @@
 ﻿using System;
 using System.IO;
+
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace WorldJourney.Filters
 {
-    public class LogActionFilterAttribute: ActionFilterAttribute
+    public class LogActionFilterAttribute : ActionFilterAttribute
     {
         private readonly IWebHostEnvironment _environment;
-        
+
         private readonly string _contentRootPath;
         private readonly string _logPath;
         private readonly string _fileName;
@@ -25,5 +26,14 @@ namespace WorldJourney.Filters
             _fullPath = Path.Combine(_logPath, _fileName);
         }
 
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            Directory.CreateDirectory(_logPath);
+            var actionName = context.ActionDescriptor.RouteValues["action"];
+            var controllerName = context.ActionDescriptor.RouteValues["controller"];
+            using FileStream fs = new FileStream(_fullPath, FileMode.Create);
+            using StreamWriter sw = new StreamWriter(fs);
+            sw.WriteLine($"The action {actionName} in {controllerName} controller started, event fired: {nameof(OnActionExecuting)}");
+        }
     }
 }
