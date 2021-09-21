@@ -15,7 +15,7 @@ namespace WorldJourney.Controllers
             return View();
         }
 
-        public IActionResult Details()
+        public IActionResult Details(int? id)
         {
             ViewData["Page"] = "Search city";
 
@@ -26,7 +26,7 @@ namespace WorldJourney.Controllers
             return View(city);
         }
 
-        public IActionResult GetImage()
+        public IActionResult GetImage(int? cityId)
         {
             ViewData["Message"] = "Display Image";
 
