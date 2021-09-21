@@ -34,6 +34,8 @@ namespace WorldJourney.Controllers
             var city = _data.GetCityById(id);
 
             if (city == null) return NotFound();
+            
+            ViewBag.Title = city.CityName;
 
             return View(city);
         }
