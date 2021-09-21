@@ -15,6 +15,8 @@ namespace PollBall
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IPollResultsService, PollResultsService>();
+
+            services.AddMvc(op => op.EnableEndpointRouting = false);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IPollResultsService pollResults)
@@ -26,11 +28,9 @@ namespace PollBall
                     var selectedValue = context.Request.Query["favorite"].ToString();
                     var selectedGame = (SelectedGame)Enum.Parse(typeof(SelectedGame), selectedValue, true);
                     pollResults.AddVote(selectedGame);
-                    var gameVotes = pollResults.GetVoteResult();
-                    foreach (var currentVote in gameVotes)
-                    {
-                        await context.Response.WriteAsync($"<div> Game name: {currentVote.Key}. Votes: {currentVote.Value} </div>");
-                    }
+
+                    context.Response.Headers.Add("Content-Type", "text/html");
+                    await context.Response.WriteAsync("Thank you for submitting the poll. You may look at the poll results <a href='/?submitted=true'>Here</a>.");
                 }
                 else
                 {
@@ -39,6 +39,8 @@ namespace PollBall
             });
 
             app.UseStaticFiles();
+
+            app.UseMvcWithDefaultRoute();
 
             app.Run(async (context) =>
             {
