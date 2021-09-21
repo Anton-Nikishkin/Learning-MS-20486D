@@ -16,7 +16,7 @@ namespace PollBall
         {
             services.AddSingleton<IPollResultsService, PollResultsService>();
 
-            services.AddMvc();
+            services.AddMvc(op => op.EnableEndpointRouting = false);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IPollResultsService pollResults)
