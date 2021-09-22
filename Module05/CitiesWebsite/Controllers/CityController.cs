@@ -23,14 +23,16 @@ namespace CitiesWebsite.Controllers
             return View();
         }
 
-        public IActionResult ShowDataForCity()
+        public IActionResult ShowDataForCity(string cityName)
         {
+            ViewBag.City = _cities[cityName];
+
             return View();
         }
 
         public IActionResult GetImage(string cityName)
         {
-            return Content(cityName);
+            return File($@"images\{cityName}.jpg", "image/jpeg");
         }
     }
 }
