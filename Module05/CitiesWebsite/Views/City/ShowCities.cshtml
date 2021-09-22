@@ -17,7 +17,9 @@
     <h1>Select City</h1>
     @foreach (var item in ViewBag.Cities)
     {
-        <p>@item.Key</p>
+        <h2>
+            <a asp-action="ShowDataForCity" asp-route-cityname="@item.Key">@item.Key</a>
+        </h2>
     }
 </body>
 </html>
