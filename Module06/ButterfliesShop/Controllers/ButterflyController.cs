@@ -47,6 +47,32 @@ namespace ButterfliesShop.Controllers
             return View(indexViewModel);
         }
 
+        [HttpPost]
+        public IActionResult Create(Butterfly butterfly)
+        {
+            if (ModelState.IsValid)
+            {
+                Butterfly lastButterfly = _data.ButterfliesList.LastOrDefault();
+                butterfly.CreatedDate = DateTime.Today;
+                if (butterfly.PhotoAvatar != null && butterfly.PhotoAvatar.Length > 0)
+                {
+                    butterfly.ImageMimeType = butterfly.PhotoAvatar.ContentType;
+                    butterfly.ImageName = Path.GetFileName(butterfly.PhotoAvatar.FileName);
+                    butterfly.Id = lastButterfly.Id + 1;
+                    _butterfliesQuantityService.AddButterfliesQuantityData(butterfly);
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        butterfly.PhotoAvatar.CopyTo(memoryStream);
+                        butterfly.PhotoFile = memoryStream.ToArray();
+                    }
+                    _data.AddButterfly(butterfly);
+                    return RedirectToAction("Index");
+                }
+                return View(butterfly);
+            }
+            return View(butterfly);
+        }
+
         public IActionResult GetImage(int id)
         {
             Butterfly requestedButterfly = _data.GetButterflyById(id);
