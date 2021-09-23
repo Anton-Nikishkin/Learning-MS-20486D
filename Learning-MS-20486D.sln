@@ -31,6 +31,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module06", "Module06", "{1E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ButterfliesShop", "Module06\ButterfliesShop\ButterfliesShop.csproj", "{2CA0EFAF-6743-481C-92FD-EDD54677EB9A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module07", "Module07", "{9E413694-8560-403D-A42F-452C2C04429F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cupcakes", "Module07\Cupcakes\Cupcakes.csproj", "{5B3CA242-D715-4D17-8395-A829932E90D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,10 @@ Global
 		{2CA0EFAF-6743-481C-92FD-EDD54677EB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CA0EFAF-6743-481C-92FD-EDD54677EB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CA0EFAF-6743-481C-92FD-EDD54677EB9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B3CA242-D715-4D17-8395-A829932E90D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B3CA242-D715-4D17-8395-A829932E90D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B3CA242-D715-4D17-8395-A829932E90D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B3CA242-D715-4D17-8395-A829932E90D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +90,7 @@ Global
 		{CEBC32DB-3032-491E-99E3-2627077EECBB} = {FFE972C0-E653-4DDB-814C-A3A2D4A708AF}
 		{D1029B90-F62B-4B15-87DA-485F0E2DF9E7} = {6C65F9E4-59F7-491B-8C7A-F881A3E1E0D5}
 		{2CA0EFAF-6743-481C-92FD-EDD54677EB9A} = {1E64538F-B558-4652-A7D2-57AE0FE5C3AC}
+		{5B3CA242-D715-4D17-8395-A829932E90D7} = {9E413694-8560-403D-A42F-452C2C04429F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA3910CE-E882-4EDA-9087-38DDFE576336}
