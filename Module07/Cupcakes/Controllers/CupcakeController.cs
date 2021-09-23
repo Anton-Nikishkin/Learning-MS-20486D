@@ -1,14 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+
+using Cupcakes.Models;
+using Cupcakes.Repositories;
+
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cupcakes.Controllers
 {
     public class CupcakeController : Controller
     {
+        private readonly ICupcakeRepository _repository;
+        private readonly IWebHostEnvironment _environment;
+
+        public CupcakeController(ICupcakeRepository repository, IWebHostEnvironment environment)
+        {
+            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            _environment = environment ?? throw new ArgumentNullException(nameof(environment));
+        }
+
         public IActionResult Index()
         {
             return View();
