@@ -1,4 +1,7 @@
-﻿
+﻿@using ButterfliesShop.Models
+
+@model ButterfliesShop.Models.Butterfly
+
 @{
     Layout = null;
 }
@@ -12,5 +15,10 @@
     <link type="text/css" rel="stylesheet" href="~/css/butterflies-shop-styles.css" />
 </head>
 <body>
+    <div class="container">
+        <h1 class="main-title">Add Butterflies to the Shop</h1>
+        <form method="post" enctype="multipart/form-data" asp-action="Create">
+        </form>
+    </div>
 </body>
 </html>
