@@ -47,6 +47,12 @@ namespace ButterfliesShop.Controllers
             return View(indexViewModel);
         }
 
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Create(Butterfly butterfly)
         {
