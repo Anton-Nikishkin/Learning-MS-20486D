@@ -364,4 +364,6 @@ FodyWeavers.xsd
 
 # Ignore LogFiles
 /Module04/WorldJourney/LogFile
+
+# Ignore Sqlite databases
 *.db
