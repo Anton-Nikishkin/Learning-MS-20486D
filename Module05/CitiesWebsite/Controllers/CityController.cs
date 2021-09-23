@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CitiesWebsite.Services;
+
 using Microsoft.AspNetCore.Mvc;
-using CitiesWebsite.Services;
 
 namespace CitiesWebsite.Controllers
 {
