@@ -31,6 +31,8 @@ namespace ZooSite
             zooContext.Database.EnsureDeleted();
             zooContext.Database.EnsureCreated();
 
+            app.UseStaticFiles();
+
             app.UseRouting();
 
             app.UseEndpoints(routes =>
