@@ -6,6 +6,8 @@ using Cupcakes.Repositories;
 
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cupcakes.Controllers
 {
@@ -20,11 +22,28 @@ namespace Cupcakes.Controllers
             _environment = environment ?? throw new ArgumentNullException(nameof(environment));
         }
 
+        #region Public Methods
+
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            return View(_repository.GetCupcakes());
         }
 
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            var cupcake = _repository.GetCupcakeById(id);
+
+            if (cupcake == null)
+            {
+                return NotFound();
+            }
+
+            return View(cupcake);
+        }
+
+        [HttpGet]
         public IActionResult GetImage(int id)
         {
             Cupcake requestedCupcake = _repository.GetCupcakeById(id);
@@ -60,5 +79,17 @@ namespace Cupcakes.Controllers
                 return NotFound();
             }
         }
+
+        #endregion
+
+        #region Private Methods
+
+        private void PopulateBakeriesDropDownList(int? selectedBakery = null)
+        {
+            var bakeries = _repository.PopulateBakeriesDropDownList();
+            ViewBag.BakeryID = new SelectList(bakeries.AsNoTracking(), "BakeryId", "BakeryName", selectedBakery);
+        }
+
+        #endregion
     }
 }
