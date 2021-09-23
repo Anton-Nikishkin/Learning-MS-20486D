@@ -207,3 +207,14 @@
     background-color: #008484;
     color: #fff;
 }
+
+.photo-index-card {
+    background-color: #ffffff;
+    padding: 0;
+    margin: 10px 5px 15px 18px;
+    padding-bottom: 25px;
+    width: 355px;
+    border: 1px solid #d6d4d4;
+    border-radius: 10px;
+    overflow: hidden;
+}
