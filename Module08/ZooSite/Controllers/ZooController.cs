@@ -12,9 +12,9 @@ namespace ZooSite.Controllers
     public class ZooController : Controller
     {
         private ZooContext _context;
-        private IHostingEnvironment _environment;
+        private IWebHostEnvironment _environment;
 
-        public ZooController(ZooContext context, IHostingEnvironment environment)
+        public ZooController(ZooContext context, IWebHostEnvironment environment)
         {
             _context = context;
             _environment = environment;
