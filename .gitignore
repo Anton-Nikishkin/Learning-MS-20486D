@@ -364,3 +364,4 @@ FodyWeavers.xsd
 
 # Ignore LogFiles
 /Module04/WorldJourney/LogFile
+*.db
