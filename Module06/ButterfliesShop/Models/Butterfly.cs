@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 using Microsoft.AspNetCore.Http;
@@ -29,11 +28,11 @@ namespace ButterfliesShop.Models
 
         [Display(Name = "Butterflies Picture:")]
         public IFormFile PhotoAvatar { get; set; }
-        
+
         public string ImageName { get; set; }
-        
+
         public byte[] PhotoFile { get; set; }
-        
+
         public string ImageMimeType { get; set; }
     }
 }

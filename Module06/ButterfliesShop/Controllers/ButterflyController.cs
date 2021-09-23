@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
+
 using ButterfliesShop.Models;
 using ButterfliesShop.Services;
+
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using System.IO;
 
 namespace ButterfliesShop.Controllers
 {
@@ -21,7 +21,7 @@ namespace ButterfliesShop.Controllers
             _data = data;
             _environment = environment;
             _butterfliesQuantityService = butterfliesQuantityService;
-            
+
             InitializeButterfliesData();
         }
 
@@ -29,7 +29,7 @@ namespace ButterfliesShop.Controllers
         {
             if (_data.ButterfliesList == null)
             {
-                List<Butterfly> butterflies = _data.ButterfliesInitializeData();
+                var butterflies = _data.ButterfliesInitializeData();
                 foreach (var butterfly in butterflies)
                 {
                     _butterfliesQuantityService.AddButterfliesQuantityData(butterfly);
@@ -52,7 +52,7 @@ namespace ButterfliesShop.Controllers
         {
             if (ModelState.IsValid)
             {
-                Butterfly lastButterfly = _data.ButterfliesList.LastOrDefault();
+                var lastButterfly = _data.ButterfliesList.LastOrDefault();
                 butterfly.CreatedDate = DateTime.Today;
                 if (butterfly.PhotoAvatar != null && butterfly.PhotoAvatar.Length > 0)
                 {
@@ -78,7 +78,30 @@ namespace ButterfliesShop.Controllers
             Butterfly requestedButterfly = _data.GetButterflyById(id);
             if (requestedButterfly != null)
             {
-                return null;
+                var webRootpath = _environment.WebRootPath;
+                var folderPath = "images";
+                var fullPath = Path.Combine(webRootpath, folderPath, requestedButterfly.ImageName);
+                if (System.IO.File.Exists(fullPath))
+                {
+                    var fileOnDisk = new FileStream(fullPath, FileMode.Open);
+                    byte[] fileBytes;
+                    using (var br = new BinaryReader(fileOnDisk))
+                    {
+                        fileBytes = br.ReadBytes((int)fileOnDisk.Length);
+                    }
+                    return File(fileBytes, requestedButterfly.ImageMimeType);
+                }
+                else
+                {
+                    if (requestedButterfly.PhotoFile.Length > 0)
+                    {
+                        return File(requestedButterfly.PhotoFile, requestedButterfly.ImageMimeType);
+                    }
+                    else
+                    {
+                        return NotFound();
+                    }
+                }
             }
             else
             {
