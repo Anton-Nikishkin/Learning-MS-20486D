@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
+using ButterfliesShop.Validators;
+
 using Microsoft.AspNetCore.Http;
 
 namespace ButterfliesShop.Models
@@ -19,6 +21,7 @@ namespace ButterfliesShop.Models
 
         [Display(Name = "Butterflies Quantity:")]
         [Required(ErrorMessage = "Please select the butterfly quantity")]
+        [MaxButterflyQuantityValidation(50)]
         public int? Quantity { get; set; }
 
         [Display(Name = "Characteristics:")]
