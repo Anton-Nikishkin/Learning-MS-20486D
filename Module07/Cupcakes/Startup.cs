@@ -1,4 +1,5 @@
 ﻿using Cupcakes.Data;
+using Cupcakes.Repositories;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,8 @@ namespace Cupcakes
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<ICupcakeRepository, CupcakeRepository>();
+
             services.AddDbContext<CupcakeContext>(options =>
             options.UseSqlite("Data Source=cupcake.db"));
 
