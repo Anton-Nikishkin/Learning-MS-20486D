@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "devDependencies": {
+    "gulp": "4.0.2",
+    "gulp-concat": "2.6.1",
+    "gulp-cssmin": "0.2.0",
+    "gulp-sass": "4.1.1",
+    "gulp-uglify": "3.0.2"
+  },
+  "dependencies": {
+    "bootstrap": "4.3.1",
+    "hoek": "4.2.1",
+    "jquery": "3.6.0",
+    "lodash": "4.17.21",
+    "popper.js": "1.14.7"
+  }
+}
