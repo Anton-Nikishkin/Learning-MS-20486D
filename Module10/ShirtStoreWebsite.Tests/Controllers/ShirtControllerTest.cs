@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Collections.Generic;
+
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using Moq;
+
 using ShirtStoreWebsite.Controllers;
 using ShirtStoreWebsite.Models;
 using ShirtStoreWebsite.Services;
 using ShirtStoreWebsite.Tests.FakeRepositories;
-using Microsoft.Extensions.Logging;
-using Moq;
 
 namespace ShirtStoreWebsite.Tests
 {

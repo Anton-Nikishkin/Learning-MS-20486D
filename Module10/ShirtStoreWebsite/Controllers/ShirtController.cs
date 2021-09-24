@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 using ShirtStoreWebsite.Models;
@@ -19,17 +22,30 @@ namespace ShirtStoreWebsite.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<Shirt> shirts = _repository.GetShirts();
+            return View(shirts);
         }
 
         public IActionResult AddShirt(Shirt shirt)
         {
+            _repository.AddShirt(shirt);
+            _logger.LogDebug($"A {shirt.Color.ToString()} shirt of size {shirt.Size.ToString()} with a price of {shirt.GetFormattedTaxedPrice()} was added successfully.");
             return RedirectToAction("Index");
         }
 
         public IActionResult Delete(int id)
         {
-            return RedirectToAction("Index");
+            try
+            {
+                _repository.RemoveShirt(id);
+                _logger.LogDebug($"A shirt with id {id} was removed successfully.");
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"An error occured while trying to delete shirt with id of {id}.");
+                throw ex;
+            }
         }
     }
 }
