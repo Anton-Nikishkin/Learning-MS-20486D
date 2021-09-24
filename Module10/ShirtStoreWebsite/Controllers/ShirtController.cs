@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 using ShirtStoreWebsite.Models;
 using ShirtStoreWebsite.Services;
@@ -8,10 +9,12 @@ namespace ShirtStoreWebsite.Controllers
     public class ShirtController : Controller
     {
         private readonly IShirtRepository _repository;
+        private readonly ILogger _logger;
 
-        public ShirtController(IShirtRepository repository)
+        public ShirtController(IShirtRepository repository, ILogger logger)
         {
-            _repository = repository;
+            _repository = repository ?? throw new System.ArgumentNullException(nameof(repository));
+            _logger = logger ?? throw new System.ArgumentNullException(nameof(logger));
         }
 
         public IActionResult Index()
