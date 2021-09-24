@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using ShirtStoreWebsite.Models;
+
 using ShirtStoreWebsite.Data;
+using ShirtStoreWebsite.Models;
 
 namespace ShirtStoreWebsite.Services
 {
@@ -25,7 +24,7 @@ namespace ShirtStoreWebsite.Services
         {
             _context.Add(shirt);
             int entries = _context.SaveChanges();
-            if(entries > 0)
+            if (entries > 0)
             {
                 return true;
             }
@@ -34,7 +33,7 @@ namespace ShirtStoreWebsite.Services
                 return false;
             }
         }
-        
+
         public bool RemoveShirt(int id)
         {
             var shirt = _context.Shirts.SingleOrDefault(m => m.Id == id);

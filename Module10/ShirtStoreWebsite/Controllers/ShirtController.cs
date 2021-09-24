@@ -14,10 +14,10 @@ namespace ShirtStoreWebsite.Controllers
         private readonly IShirtRepository _repository;
         private readonly ILogger _logger;
 
-        public ShirtController(IShirtRepository repository, ILogger logger)
+        public ShirtController(IShirtRepository repository, ILogger<ShirtController> logger)
         {
-            _repository = repository ?? throw new System.ArgumentNullException(nameof(repository));
-            _logger = logger ?? throw new System.ArgumentNullException(nameof(logger));
+            _repository = repository;
+            _logger = logger;
         }
 
         public IActionResult Index()
