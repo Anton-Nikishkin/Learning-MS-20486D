@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
-using ShirtStoreWebsite.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+
+using ShirtStoreWebsite.Data;
 
 namespace ShirtStoreWebsite
 {
@@ -26,20 +22,23 @@ namespace ShirtStoreWebsite
             services.AddDbContext<ShirtContext>(options =>
                  options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddMvc();
+            services.AddControllersWithViews();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ShirtContext shirtContext)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ShirtContext shirtContext)
         {
             shirtContext.Database.EnsureDeleted();
             shirtContext.Database.EnsureCreated();
 
             app.UseStaticFiles();
-            app.UseMvc(routes =>
+
+            app.UseRouting();
+
+            app.UseEndpoints(routes =>
             {
-                routes.MapRoute(
+                routes.MapControllerRoute(
                     name: "defaultRoute",
-                    template: "{controller=Shirt}/{action=Index}/{id?}");
+                    pattern: "{controller=Shirt}/{action=Index}/{id?}");
             });
         }
     }
