@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 
 namespace ShirtStoreWebsite.Models
@@ -21,7 +17,7 @@ namespace ShirtStoreWebsite.Models
 
         public string GetFormattedTaxedPrice()
         {
-            return Price.ToString($"C2", CultureInfo.GetCultureInfo("en-US"));
+            return (Price * Tax).ToString($"C2", CultureInfo.GetCultureInfo("en-US"));
         }
     }
 }
